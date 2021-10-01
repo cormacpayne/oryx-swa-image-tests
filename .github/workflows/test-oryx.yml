@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set execute bit
+        run: chmod +x *
+
+      - name: Test Blazor Wasm
+        run: |
+          docker run --rm -v $(pwd):/scripts arroycdocker/build:azfunc-jamstack-aot /scripts/blazor-wasm-aot.sh
