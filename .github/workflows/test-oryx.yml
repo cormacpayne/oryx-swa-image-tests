@@ -15,6 +15,7 @@ jobs:
       matrix:
         script:
           - blazor-wasm-aot
+          - blazor-wasm-aot2
           - blazor-wasm
           - functions-dotnet6-inproc
           - functions-dotnet6-isolated
