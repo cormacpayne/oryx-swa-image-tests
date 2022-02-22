@@ -27,4 +27,4 @@ jobs:
       - name: ${{ matrix.script }}
         run: |
           chmod +x *
-          docker run --rm -v $(pwd):/scripts mcr.microsoft.com/oryx/build:azfunc-jamstack-20211102.1 /scripts/${{ matrix.script }}.sh
+          docker run --rm -v $(pwd):/scripts mcr.microsoft.com/oryx/build:azfunc-jamstack-20220131.3 /scripts/${{ matrix.script }}.sh
