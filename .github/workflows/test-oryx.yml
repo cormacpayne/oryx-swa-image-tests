@@ -25,6 +25,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: ${{ matrix.script }}
+        continue-on-error: true
         run: |
           chmod +x *
           docker run --rm -v $(pwd):/scripts mcr.microsoft.com/oryx/build:azfunc-jamstack-20220131.3 /scripts/${{ matrix.script }}.sh
